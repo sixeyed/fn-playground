@@ -13,7 +13,7 @@ Mount to run in a container:
 ```
 docker container run -it --rm \
  -e FN_FORMAT=http-stream \
- -e FN_LISTENER=unix:/tmp/kestrelx.sock \
+ -e FN_LISTENER=unix:/tmp/kestrel.sock \
  -v /tmp/:/tmp/ \
  sixeyed/fn-echoapi
 ```

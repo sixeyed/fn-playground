@@ -10,8 +10,8 @@ namespace echoapi.Controllers
     [ApiController]
     public class CallController : ControllerBase
     {
-        [HttpGet("{input}")]
-        public ActionResult<string> Get(string input)
+        [HttpPost()]
+        public ActionResult<string> Post(string input)
         {
             return input.ToUpper();
         }

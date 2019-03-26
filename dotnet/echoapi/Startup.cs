@@ -29,14 +29,16 @@ namespace echoapi
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IApplicationLifetime appLifetime)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
-            
-            app.UseMvc();
-        }
+
+            app.UseMvc(); 
+
+            appLifetime.ApplicationStarted.Register(FnHelper.EnsureListenerSocket);        
+        }        
     }
 }
