@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -38,7 +38,9 @@ namespace echoapi
 
             app.UseMvc(); 
 
-            appLifetime.ApplicationStarted.Register(FnHelper.EnsureListenerSocket);        
+            appLifetime.ApplicationStarted.Register(FnHelper.EnsureListenerSocket);
+            appLifetime.ApplicationStopped.Register(FnHelper.RemoveListenerSocket);
         }        
     }
 }
+

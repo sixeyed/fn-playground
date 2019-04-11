@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using log4net;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
@@ -21,7 +21,7 @@ namespace echoapi
                 Logger.Log.Fatal("FN_LISTENER=unix:/... required");
                 Environment.Exit(-1);
             }            
-            var socketPath = FnHelper.ListenerSocketPath;
+            var socketPath = FnHelper.InternalSocketPath;
             Logger.Log.Info($"Listening on unix socket: {socketPath}");
             CreateWebHostBuilder(socketPath, args).Build().Run();
         }       
@@ -36,3 +36,4 @@ namespace echoapi
                 });
     }
 }
+

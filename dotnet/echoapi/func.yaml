@@ -1,6 +1,6 @@
 schema_version: 20180708
 name: fn-echoapi
-version: 0.0.9
+version: 0.0.19
 runtime: docker
 triggers:
 - name: echoapi-trigger
